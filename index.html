@@ -397,8 +397,9 @@
 const CONFIG = {
   version: '0.6.0',
   // Where the release files live, ending in "/". File names match what release.yml produces.
-  // Empty until the agent is published: the download buttons then show "coming soon".
-  base: '',
+  // Files not listed in `ready` show "coming soon".
+  base: 'https://github.com/zii144/glidepad-site/releases/download/v0.6.0/',
+  ready: ['mac', 'sums'],
   appStore: '',   // e.g. https://apps.apple.com/app/id6837144516 — empty shows "coming soon"
   playStore: '',  // e.g. https://play.google.com/store/apps/details?id=dev.glidepad.glidepad
 };
@@ -540,6 +541,7 @@ function detect() {
 }
 const device = detect();
 const mainFile = { mac: 'mac', win: 'win', linux: 'deb' };
+const ready = (file) => !!CONFIG.base && CONFIG.ready.includes(file);
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const still = matchMedia('(prefers-reduced-motion: reduce)');
@@ -565,7 +567,8 @@ function render() {
   $$('[data-i18n-label]').forEach(el => { el.setAttribute('aria-label', t[el.dataset.i18nLabel]); });
   $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   $$('[data-file]').forEach(a => {
-    if (CONFIG.base) { a.href = CONFIG.base + FILES[a.dataset.file]; a.removeAttribute('aria-disabled'); a.removeAttribute('title'); }
+    const panelMain = a.closest('.side').querySelector('.btn[data-file]').dataset.file;
+    if (ready(a.dataset.file) && ready(panelMain)) { a.href = CONFIG.base + FILES[a.dataset.file]; a.removeAttribute('aria-disabled'); a.removeAttribute('title'); }
     else {
       a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.title = t.soon;
     }
@@ -576,7 +579,7 @@ function render() {
     $('#main-download-label').textContent = t.onPhone;
     main.href = '#install';
     $('#hero-fine').textContent = t.finePhone;
-  } else if (CONFIG.base) {
+  } else if (ready(mainFile[device])) {
     $('#main-download-label').textContent = t.dlFor[device];
     main.href = CONFIG.base + FILES[mainFile[device]];
     $('#hero-fine').textContent = t.fine(device);
@@ -592,7 +595,8 @@ function render() {
     if (url) { a.textContent = name + ' →'; a.href = url; a.removeAttribute('aria-disabled'); }
     else { a.textContent = `${name} · ${t.soon}`; a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); }
   }
-  $$('.soon').forEach(el => { el.hidden = !!CONFIG.base; });
+  // A panel's note shows only while its main download isn't out yet.
+  $$('.soon').forEach(el => { el.hidden = ready(el.parentElement.querySelector('.btn[data-file]').dataset.file); });
   $('#foot-version').textContent = t.footVersion;
   buildStatement(t.statement);
   onScroll();
