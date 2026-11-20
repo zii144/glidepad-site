@@ -8,108 +8,153 @@
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231c1c1e'/%3E%3Cg fill='%23fff' transform='translate(4 4)'%3E%3Ccircle cx='5' cy='26' r='2'/%3E%3Ccircle cx='10' cy='20.5' r='2.5'/%3E%3Ccircle cx='15.5' cy='15.5' r='3'/%3E%3Cpath d='M17 5v19l5.1-4.9 3.8 8 3.2-1.5-3.6-7.8H31z'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/doc.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/doc.js" defer></script>
 </head>
 <body>
-<div class="wrap">
-  <header>
+<header class="top">
+  <div class="wrap">
     <a class="brand" href="../"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><circle cx="5" cy="26" r="2"/><circle cx="10" cy="20.5" r="2.5"/><circle cx="15.5" cy="15.5" r="3"/><path d="M17 5v19l5.1-4.9 3.8 8 3.2-1.5-3.6-7.8H31z"/></svg></span>Glidepad</a>
     <nav aria-label="Site">
-      <a href="../">Download</a>
+      <a href="../">Home</a>
       <a href="../support/">Support</a>
       <a href="./" aria-current="page">Privacy</a>
     </nav>
-  </header>
-</div>
+  </div>
+  <span class="progress" aria-hidden="true"></span>
+</header>
 
 <main class="wrap">
-  <h1>Privacy Policy</h1>
-  <p class="meta">Effective November 20, 2026</p>
-
-  <div class="summary">
-    <p><strong>In short:</strong> Glidepad does not collect, store or share any personal data on servers. There is no Glidepad server.</p>
-    <ul>
-      <li>No account, no sign-in, no advertising, no analytics and no tracking.</li>
-      <li>Your phone talks only to the computers you pair with it, directly over your own network, end-to-end encrypted.</li>
-      <li>What Glidepad keeps, it keeps on your own phone and your own computer, and you can delete it at any time.</li>
+  <div class="head">
+    <p class="kicker reveal">Legal</p>
+    <h1 class="reveal" style="--d:.06s">Privacy Policy</h1>
+    <p class="meta reveal" style="--d:.12s">Effective November 20, 2026</p>
+    <p class="lead reveal" style="--d:.18s">Glidepad does not collect, store or share any personal data on servers. There is no Glidepad server.</p>
+    <ul class="points reveal" style="--d:.24s">
+      <li><b>Nothing to sign up for</b>No account, no sign-in, no advertising, no analytics and no tracking.</li>
+      <li><b>Only your own devices</b>Your phone talks only to the computers you pair with it, directly over your own network, end-to-end encrypted.</li>
+      <li><b>Yours to delete</b>What Glidepad keeps stays on your own phone and computer, and you can delete it at any time.</li>
     </ul>
   </div>
 
-  <h2>1. Who this policy covers</h2>
-  <p>This policy covers the Glidepad app for iPhone and iPad, the Glidepad app for Android, and the Glidepad agent for macOS, Windows and Linux (together, “Glidepad”). Glidepad is made by Chun Yin Wong, an independent developer (“we”, “us”). The app and the agent together let you use your phone as a trackpad, keyboard, media remote and presenter for your own computer.</p>
+  <div class="layout">
+    <nav class="toc" aria-label="On this page">
+      <p class="kicker">On this page</p>
+      <ol>
+        <li><a href="#scope">Who this covers</a></li>
+        <li><a href="#collect">Data we collect</a></li>
+        <li><a href="#phone">On your phone</a></li>
+        <li><a href="#between">Phone and computer</a></li>
+        <li><a href="#others">Other companies</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#delete">Keeping and deleting</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
 
-  <h2>2. Data we collect</h2>
-  <p><strong>None.</strong> Glidepad never sends us anything you do in the app or on your computer. It has no account system, no analytics or crash-reporting SDK, no advertising SDK, and no tracking of any kind, and it never contacts a server run by us. We do not sell, rent or share personal data, because we do not have any.</p>
-  <p>Apple and Google run the stores you download Glidepad from. They may give developers aggregated statistics (such as download counts), and, <em>only if you have chosen to share them with developers in your device’s settings</em>, anonymous crash reports. Those are governed by Apple’s and Google’s own privacy policies. They do not identify you to us.</p>
+    <article>
+      <section id="scope">
+        <h2><span class="n">01</span>Who this policy covers</h2>
+        <p>This policy covers the Glidepad app for iPhone and iPad, the Glidepad app for Android, and the Glidepad agent for macOS, Windows and Linux (together, “Glidepad”). Glidepad is made by Chun Yin Wong, an independent developer (“we”, “us”). The app and the agent together let you use your phone as a trackpad, keyboard, media remote and presenter for your own computer.</p>
+      </section>
 
-  <h2>3. What stays on your phone</h2>
-  <ul>
-    <li>A private key that identifies your phone to your computers. On iPhone and iPad it is kept in the iOS Keychain; on Android, in the Android Keystore. It never leaves the phone.</li>
-    <li>The computers you have paired: their names, network addresses and public keys.</li>
-    <li>Your settings, button decks you create, and text snippets you save in Compose.</li>
-  </ul>
-  <p>On Android, this data is excluded from cloud backup and device-to-device transfer. On iPhone and iPad, it is included in your own encrypted iCloud or computer backups, like other app data, and is never readable by us.</p>
+      <section id="collect">
+        <h2><span class="n">02</span>Data we collect</h2>
+        <p><strong>None.</strong> Glidepad never sends us anything you do in the app or on your computer. It has no account system, no analytics or crash-reporting SDK, no advertising SDK, and no tracking of any kind, and it never contacts a server run by us. We do not sell, rent or share personal data, because we do not have any.</p>
+        <p>Apple and Google run the stores you download Glidepad from. They may give developers aggregated statistics (such as download counts), and, <em>only if you have chosen to share them with developers in your device’s settings</em>, anonymous crash reports. Those are governed by Apple’s and Google’s own privacy policies. They do not identify you to us.</p>
+      </section>
 
-  <h2>4. What travels between your phone and your computer</h2>
-  <p>Glidepad works by sending input from your phone to a computer you have paired. This traffic goes directly between the two devices over your local network (or Bluetooth, on Android, if you turn that mode on). It never passes through us. Every message is authenticated and encrypted end to end (X25519 key agreement, ChaCha20-Poly1305), and pairing happens by scanning a QR code, so keys are never sent over the network.</p>
-  <table class="table">
-    <thead><tr><th>From your phone to your computer</th><th>From your computer to your phone</th></tr></thead>
-    <tbody>
-      <tr>
-        <td>Pointer movement, clicks, scrolling and gestures; keystrokes and text you type or dictate; clipboard text when you choose to send it; photos and files you choose to send (saved to the computer’s Downloads folder).</td>
-        <td>The name of the app in front, so the right controls appear; a live picture of the screen while the screen preview is open; clipboard text when you choose to fetch it; on a Mac, what is playing and the volume while the Media panel is open.</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>The Glidepad agent on your computer keeps its own key and the list of phones you have paired, in its settings folder. It keeps a short activity log (for example, “connected”) in memory only, and does not save it.</p>
+      <section id="phone">
+        <h2><span class="n">03</span>What stays on your phone</h2>
+        <ul>
+          <li>A private key that identifies your phone to your computers. On iPhone and iPad it is kept in the iOS Keychain; on Android, in the Android Keystore. It is never sent over the network or to us.</li>
+          <li>The computers you have paired: their names, network addresses and public keys.</li>
+          <li>Your settings, button decks you create, and text snippets you save in Compose.</li>
+        </ul>
+        <p>On Android, this data is excluded from cloud backup and device-to-device transfer. On iPhone and iPad, it is included in your own encrypted iCloud or computer backups, like other app data, and is never readable by us.</p>
+      </section>
 
-  <h2>5. Optional features that involve other companies</h2>
-  <h3>Dictation with the phone’s microphone</h3>
-  <p>If you turn on “Dictate with This Phone” and press Dictate, your phone’s built-in speech recognition turns your speech into text: Apple’s on iPhone and iPad, Google’s on Android. Depending on your language and device, the audio may be sent to Apple or Google to be recognized, under their privacy policies (<a href="https://www.apple.com/legal/privacy/">Apple</a>, <a href="https://policies.google.com/privacy">Google</a>). Glidepad does not record or keep any audio, and the resulting text goes only to your computer.</p>
-  <h3>Artwork for what is playing (Mac)</h3>
-  <p>While the Media panel is open, the agent on a Mac can show the title, artist and artwork of what is playing in Music, Spotify or a YouTube tab in your browser. macOS asks your permission before the agent can query each of those apps. For Spotify and YouTube, the agent downloads the artwork image from that service’s image server (<code>i.scdn.co</code> or <code>i.ytimg.com</code>). Like any web request, this tells that service your computer’s IP address. Nothing else is sent, and nothing is sent to us.</p>
-  <h3>Links in button decks</h3>
-  <p>A deck button can open a website on your computer, such as YouTube. That website is opened by your computer’s browser, under that website’s own privacy policy.</p>
+      <section id="between">
+        <h2><span class="n">04</span>What travels between your phone and your computer</h2>
+        <p>Glidepad works by sending input from your phone to a computer you have paired. This traffic goes directly between the two devices over your local network (or Bluetooth, on Android, if you turn that mode on). It never passes through us. Every message is authenticated and encrypted end to end (X25519 key agreement, ChaCha20-Poly1305), and pairing happens by scanning a QR code, so keys are never sent over the network.</p>
+        <div class="split">
+          <div>
+            <h3>Phone → computer</h3>
+            <p>Pointer movement, clicks, scrolling and gestures; keystrokes and text you type or dictate; clipboard text when you choose to send it; photos and files you choose to send (saved to the computer’s Downloads folder).</p>
+          </div>
+          <div>
+            <h3>Computer → phone</h3>
+            <p>The name of the app in front, so the right controls appear; a live picture of the screen while the screen preview is open; clipboard text when you choose to fetch it; on a Mac, what is playing and the volume while the Media panel is open.</p>
+          </div>
+        </div>
+        <p>The Glidepad agent on your computer keeps its own key and the list of phones you have paired, in its settings folder. It keeps a short activity log (for example, “connected”) in memory only, and does not save it.</p>
+      </section>
 
-  <h2>6. Permissions</h2>
-  <table class="table">
-    <thead><tr><th>Permission</th><th>Why Glidepad asks for it</th></tr></thead>
-    <tbody>
-      <tr><td><b>Local Network</b></td><td>To find your computers on your network and connect to them.</td></tr>
-      <tr><td><b>Camera</b></td><td>Only to scan the pairing QR code. Images are processed on the phone and are not saved.</td></tr>
-      <tr><td><b>Photos</b></td><td>Only when you choose photos or videos to send to your computer. Glidepad reads only the items you pick.</td></tr>
-      <tr><td><b>Microphone and Speech Recognition</b></td><td>Only if you turn on dictation and press Dictate (see section 5).</td></tr>
-      <tr><td><b>Bluetooth</b> (Android only)</td><td>Only if you turn on the mode that makes the phone act as a Bluetooth mouse and keyboard.</td></tr>
-      <tr><td><b>Accessibility</b> (macOS agent)</td><td>Required by macOS so the agent can move the pointer and type on your computer.</td></tr>
-      <tr><td><b>Screen Recording</b> (agent, optional)</td><td>Only for the screen preview. The picture is sent to your phone and is not saved.</td></tr>
-    </tbody>
-  </table>
-  <p>You can turn any of these off in your device’s settings. The features that need them will stop working; everything else keeps working.</p>
+      <section id="others">
+        <h2><span class="n">05</span>Optional features that involve other companies</h2>
+        <h3>Dictation with the phone’s microphone</h3>
+        <p>If you turn on “Dictate with This Phone” and press Dictate, your phone’s built-in speech recognition turns your speech into text: Apple’s on iPhone and iPad, Google’s on Android. Depending on your language and device, the audio may be sent to Apple or Google to be recognized, under their privacy policies (<a href="https://www.apple.com/legal/privacy/">Apple</a>, <a href="https://policies.google.com/privacy">Google</a>). Glidepad does not record or keep any audio, and the resulting text goes only to your computer.</p>
+        <h3>Artwork for what is playing (Mac)</h3>
+        <p>While the Media panel is open, the agent on a Mac can show the title, artist and artwork of what is playing in Music, Spotify or a YouTube tab in your browser. macOS asks your permission before the agent can query each of those apps. For Spotify and YouTube, the agent downloads the artwork image from that service’s image server (<code>i.scdn.co</code> or <code>i.ytimg.com</code>). Like any web request, this tells that service your computer’s IP address. Nothing else is sent, and nothing is sent to us.</p>
+        <h3>Links in button decks</h3>
+        <p>A deck button can open a website on your computer, such as YouTube. That website is opened by your computer’s browser, under that website’s own privacy policy.</p>
+      </section>
 
-  <h2>7. Keeping and deleting your data</h2>
-  <p>Because everything is stored on your own devices, you control it completely:</p>
-  <ul>
-    <li><b>On your phone:</b> tap the “…” button next to a computer and choose “Forget This Computer”, or delete the Glidepad app to remove everything it stored.</li>
-    <li><b>On your computer:</b> unpair a phone with <code>glidepad-agent forget &lt;name&gt;</code>, or uninstall the agent and delete its settings folder: <code>~/Library/Application Support/dev.Glidepad.Glidepad</code> on macOS, <code>%APPDATA%\Glidepad\Glidepad</code> on Windows, or <code>~/.config/glidepad</code> on Linux.</li>
-  </ul>
-  <p>We hold no copy of any of this, so there is nothing for us to delete, export or correct on your behalf.</p>
+      <section id="permissions">
+        <h2><span class="n">06</span>Permissions</h2>
+        <dl class="rows">
+          <div><dt>Local Network</dt><dd>To find your computers on your network and connect to them.</dd></div>
+          <div><dt>Camera</dt><dd>Only to scan the pairing QR code. Images are processed on the phone and are not saved.</dd></div>
+          <div><dt>Photos</dt><dd>Only when you choose photos or videos to send to your computer. Glidepad reads only the items you pick.</dd></div>
+          <div><dt>Microphone and Speech Recognition</dt><dd>Only if you turn on dictation and press Dictate (see section 05).</dd></div>
+          <div><dt>Bluetooth <span style="font-weight:400;color:var(--ink-3)">(Android)</span></dt><dd>Only if you turn on the mode that makes the phone act as a Bluetooth mouse and keyboard.</dd></div>
+          <div><dt>Accessibility <span style="font-weight:400;color:var(--ink-3)">(macOS agent)</span></dt><dd>Required by macOS so the agent can move the pointer and type on your computer.</dd></div>
+          <div><dt>Screen Recording <span style="font-weight:400;color:var(--ink-3)">(agent, optional)</span></dt><dd>Only for the screen preview. The picture is sent to your phone and is not saved.</dd></div>
+        </dl>
+        <p>You can turn any of these off in your device’s settings. The features that need them will stop working; everything else keeps working.</p>
+      </section>
 
-  <h2>8. Children</h2>
-  <p>Glidepad does not collect personal data from anyone, including children. It has no chat, no social features and no user-generated content shared with others.</p>
+      <section id="delete">
+        <h2><span class="n">07</span>Keeping and deleting your data</h2>
+        <p>Because everything is stored on your own devices, you control it completely:</p>
+        <ul>
+          <li><b>On your phone:</b> tap the “…” button next to a computer and choose “Forget This Computer”, or delete the Glidepad app to remove everything it stored.</li>
+          <li><b>On your computer:</b> unpair a phone with <code>glidepad-agent forget &lt;name&gt;</code>, or uninstall the agent and delete its settings folder: <code>~/Library/Application Support/dev.Glidepad.Glidepad</code> on macOS, <code>%APPDATA%\Glidepad\Glidepad</code> on Windows, or <code>~/.config/glidepad</code> on Linux.</li>
+        </ul>
+        <p>We hold no copy of any of this, so there is nothing for us to delete, export or correct on your behalf.</p>
+      </section>
 
-  <h2>9. Your rights</h2>
-  <p>Privacy laws such as the GDPR, the UK GDPR, the California Consumer Privacy Act and Taiwan’s and Hong Kong’s personal data laws give you rights to access, correct, delete or move personal data held about you, and to object to its use. We do not hold personal data about Glidepad users. If you have a question or a request, contact us (see section 11) and we will reply.</p>
+      <section id="children">
+        <h2><span class="n">08</span>Children</h2>
+        <p>Glidepad does not collect personal data from anyone, including children. It has no chat, no social features and no user-generated content shared with others.</p>
+      </section>
 
-  <h2>10. Changes to this policy</h2>
-  <p>If Glidepad changes in a way that affects your privacy, we will update this page and its effective date before the change takes effect. Material changes will also be noted in the app’s release notes.</p>
+      <section id="rights">
+        <h2><span class="n">09</span>Your rights</h2>
+        <p>Privacy laws such as the GDPR, the UK GDPR, the California Consumer Privacy Act and Taiwan’s and Hong Kong’s personal data laws give you rights to access, correct, delete or move personal data held about you, and to object to its use. We do not hold personal data about Glidepad users. If you have a question or a request, contact us (see section 11) and we will reply.</p>
+      </section>
 
-  <h2>11. Contact</h2>
-  <p>For questions about this policy or about Glidepad, use the <a href="../support/">support page</a>.</p>
+      <section id="changes">
+        <h2><span class="n">10</span>Changes to this policy</h2>
+        <p>If Glidepad changes in a way that affects your privacy, we will update this page and its effective date before the change takes effect. Material changes will also be noted in the app’s release notes.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="n">11</span>Contact</h2>
+        <p>For questions about this policy or about Glidepad, use the support page.</p>
+        <a class="link" href="../support/">Go to Support</a>
+      </section>
+    </article>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>Glidepad · No ads, no account, no cloud.</span>
-    <span><a href="../">Download</a> · <a href="../support/">Support</a> · <a href="./">Privacy</a></span>
+    <span>Glidepad · No ads, no account.</span>
+    <nav aria-label="Footer"><a href="../">Home</a><a href="../support/">Support</a><a href="./">Privacy</a></nav>
   </div>
 </footer>
 </body>

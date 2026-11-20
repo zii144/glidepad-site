@@ -8,67 +8,85 @@
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231c1c1e'/%3E%3Cg fill='%23fff' transform='translate(4 4)'%3E%3Ccircle cx='5' cy='26' r='2'/%3E%3Ccircle cx='10' cy='20.5' r='2.5'/%3E%3Ccircle cx='15.5' cy='15.5' r='3'/%3E%3Cpath d='M17 5v19l5.1-4.9 3.8 8 3.2-1.5-3.6-7.8H31z'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/doc.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/doc.js" defer></script>
 </head>
 <body>
-<div class="wrap">
-  <header>
+<header class="top">
+  <div class="wrap">
     <a class="brand" href="../"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><circle cx="5" cy="26" r="2"/><circle cx="10" cy="20.5" r="2.5"/><circle cx="15.5" cy="15.5" r="3"/><path d="M17 5v19l5.1-4.9 3.8 8 3.2-1.5-3.6-7.8H31z"/></svg></span>Glidepad</a>
     <nav aria-label="Site">
-      <a href="../">Download</a>
+      <a href="../">Home</a>
       <a href="./" aria-current="page">Support</a>
       <a href="../privacy/">Privacy</a>
     </nav>
-  </header>
-</div>
+  </div>
+</header>
 
 <main class="wrap">
-  <h1>Support</h1>
-  <p class="meta">Help for the Glidepad app and the Glidepad agent.</p>
-
-  <div class="summary">
-    <p><strong>Need help or found a problem?</strong> Open a support request. Tell us your phone model, your computer (Mac, Windows or Linux, and its version), the Glidepad version (Settings → About), and what happened. Please don’t include passwords or other private information: requests are public.</p>
-    <a class="btn" href="https://github.com/zii144/glidepad-site/issues/new">Open a support request</a>
+  <div class="head">
+    <p class="kicker reveal">Support</p>
+    <h1 class="reveal" style="--d:.06s">How can we help?</h1>
+    <p class="lead reveal" style="--d:.12s">Most problems are fixed in a minute below. If yours isn’t, open a support request and we’ll take it from there.</p>
+    <div class="actions reveal" style="--d:.18s">
+      <a class="btn" href="https://github.com/zii144/glidepad-site/issues/new">Open a support request</a>
+      <a class="link" href="#problems">Common problems</a>
+    </div>
+    <p class="meta reveal" style="--d:.22s">Include your phone model, your computer (Mac, Windows or Linux, and its version), the Glidepad version (Settings → About) and what happened. Requests are public, so please leave out passwords and other private details.</p>
   </div>
 
-  <h2>Setting up</h2>
-  <ol>
-    <li><b>Install the Glidepad agent on your computer.</b> It runs on macOS 11 or later, Windows 10 or later (64-bit), and 64-bit Debian or Ubuntu. See the <a href="../">download page</a>.</li>
-    <li><b>Install the Glidepad app on your phone</b> and keep it on the same Wi-Fi network as the computer.</li>
-    <li><b>Pair them once.</b> Click the Glidepad icon next to the clock on your computer, choose <b>Pair a phone…</b>, then tap <b>Pair a Computer</b> in the app and scan the code.</li>
-  </ol>
-  <p>On a Mac, also open <b>System Settings → Privacy &amp; Security → Accessibility</b> and switch Glidepad on. Without it, macOS ignores the pointer and keys.</p>
+  <div class="layout single">
+    <article>
+      <section id="setup" class="reveal">
+        <h2>Setting up</h2>
+        <ol class="steps">
+          <li><b>Install the Glidepad agent on your computer.</b> It runs on macOS 11 or later, Windows 10 or later (64-bit), and 64-bit Debian or Ubuntu. See the <a href="../#install">install guide</a>.</li>
+          <li><b>Install the Glidepad app on your phone</b> and keep it on the same Wi-Fi network as the computer.</li>
+          <li><b>Pair them once.</b> Click the Glidepad icon next to the clock on your computer, choose <b>Pair a phone…</b>, then tap <b>Pair a Computer</b> in the app and scan the code.</li>
+        </ol>
+        <p>On a Mac, also open <b>System Settings → Privacy &amp; Security → Accessibility</b> and switch Glidepad on. Without it, macOS ignores the pointer and keys.</p>
+      </section>
 
-  <h2>Common problems</h2>
-  <div class="card">
-    <h3>The phone can’t find the computer</h3>
-    <p>Check that both are on the same Wi-Fi and that the Glidepad icon is showing on the computer. Guest, hotel and office networks often stop devices from seeing each other. On iPhone and iPad, check <b>Settings → Privacy &amp; Security → Local Network</b> and make sure Glidepad is on. On Windows, set your home Wi-Fi to <b>Private</b>.</p>
-  </div>
-  <div class="card">
-    <h3>The pointer doesn’t move on a Mac</h3>
-    <p>Open <b>System Settings → Privacy &amp; Security → Accessibility</b>, switch Glidepad off and on again, then quit Glidepad from its icon and open it again.</p>
-  </div>
-  <div class="card">
-    <h3>It stopped responding</h3>
-    <p>Click the Glidepad icon and choose <b>Quit Glidepad</b>, then open it again from Applications (Mac) or the Start menu (Windows). Your phone reconnects by itself.</p>
-  </div>
-  <div class="card">
-    <h3>Typing doesn’t reach some windows on Windows</h3>
-    <p>Windows doesn’t let ordinary programs send input to windows running as administrator. Run the agent as administrator if you need to control those windows.</p>
-  </div>
-  <div class="card">
-    <h3>I want to unpair a phone or a computer</h3>
-    <p>In the app, tap the <b>…</b> button next to a computer and choose <b>Forget This Computer</b>. On the computer, run <code>glidepad-agent forget &lt;name&gt;</code>.</p>
-  </div>
+      <section id="problems" class="reveal">
+        <h2>Common problems</h2>
+        <div class="faq">
+          <details open>
+            <summary>The phone can’t find the computer</summary>
+            <p>Check that both are on the same Wi-Fi and that the Glidepad icon is showing on the computer. Guest, hotel and office networks often stop devices from seeing each other. On iPhone and iPad, check <b>Settings → Privacy &amp; Security → Local Network</b> and make sure Glidepad is on. On Windows, set your home Wi-Fi to <b>Private</b>.</p>
+          </details>
+          <details>
+            <summary>The pointer doesn’t move on a Mac</summary>
+            <p>Open <b>System Settings → Privacy &amp; Security → Accessibility</b>, switch Glidepad off and on again, then quit Glidepad from its icon and open it again.</p>
+          </details>
+          <details>
+            <summary>It stopped responding</summary>
+            <p>Click the Glidepad icon and choose <b>Quit Glidepad</b>, then open it again from Applications (Mac) or the Start menu (Windows). Your phone reconnects by itself.</p>
+          </details>
+          <details>
+            <summary>Typing doesn’t reach some windows on Windows</summary>
+            <p>Windows doesn’t let ordinary programs send input to windows running as administrator. Run the agent as administrator if you need to control those windows.</p>
+          </details>
+          <details>
+            <summary>I want to unpair a phone or a computer</summary>
+            <p>In the app, tap the <b>…</b> button next to a computer and choose <b>Forget This Computer</b>. On the computer, run <code>glidepad-agent forget &lt;name&gt;</code>.</p>
+          </details>
+        </div>
+      </section>
 
-  <h2>Privacy and security</h2>
-  <p>Glidepad has no account and no server. Your phone and computer talk directly over your own network, and every message is end-to-end encrypted. Read the full <a href="../privacy/">privacy policy</a>.</p>
-  <p>If you think you have found a security problem, please don’t post the details publicly. Open a support request that says only “security issue”, and we will arrange a private way to talk.</p>
+      <section id="privacy" class="reveal">
+        <h2>Privacy and security</h2>
+        <p>Glidepad has no account and no server. Your phone and computer talk directly over your own network, and every message is end-to-end encrypted.</p>
+        <p>If you think you have found a security problem, please don’t post the details publicly. Open a support request that says only “security issue”, and we will arrange a private way to talk.</p>
+        <a class="link" href="../privacy/">Read the privacy policy</a>
+      </section>
+    </article>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>Glidepad · No ads, no account, no cloud.</span>
-    <span><a href="../">Download</a> · <a href="./">Support</a> · <a href="../privacy/">Privacy</a></span>
+    <span>Glidepad · No ads, no account.</span>
+    <nav aria-label="Footer"><a href="../">Home</a><a href="./">Support</a><a href="../privacy/">Privacy</a></nav>
   </div>
 </footer>
 </body>
