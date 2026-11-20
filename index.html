@@ -401,6 +401,8 @@ const CONFIG = {
   base: 'https://github.com/zii144/glidepad-site/releases/download/v0.6.0/',
   ready: ['mac', 'sums'],
   appStore: '',   // e.g. https://apps.apple.com/app/id6837144516 — empty shows "coming soon"
+  // Public TestFlight beta, shown for iPhone and iPad until the App Store link is set.
+  testflight: 'https://testflight.apple.com/join/EsnJqmbt',
   playStore: '',  // e.g. https://play.google.com/store/apps/details?id=dev.glidepad.glidepad
 };
 const v = CONFIG.version;
@@ -443,6 +445,7 @@ const T = {
     s1t: 'Install it on your computer', s1b: 'A small icon appears next to the clock. That is Glidepad, waiting for your phone.',
     s2t: 'Get the app on your phone', s2b: 'iPhone, iPad or Android. Keep the phone on the same Wi-Fi as the computer.',
     s3t: 'Scan the code', s3b: 'Click the Glidepad icon, choose “Pair a phone…”, and point your phone at the code. You only do this once.',
+    tfBeta: 'iPhone & iPad beta on TestFlight\u00a0→',
     soon: 'coming soon', soonNote: 'Downloads open soon. Check back here.',
     instKicker: 'Install', instTitle: 'Pick your computer.',
     dlMac: 'Download for Mac', dlWin: 'Download for Windows', dlDeb: 'Download .deb',
@@ -499,6 +502,7 @@ const T = {
     s1t: '在電腦安裝', s1b: '時鐘旁邊會出現一個小圖示，那就是 Glidepad，正在等你的手機。',
     s2t: '在手機安裝 App', s2b: 'iPhone、iPad 或 Android 都可以。手機和電腦要連接同一個 Wi-Fi。',
     s3t: '掃描 QR 碼', s3b: '按一下 Glidepad 圖示，選「Pair a phone…」，用手機對準 QR 碼。只需要做一次。',
+    tfBeta: 'iPhone、iPad 測試版（TestFlight）\u00a0→',
     soon: '即將推出', soonNote: '下載即將開放，請稍後再來。',
     instKicker: '安裝', instTitle: '選擇你的電腦。',
     dlMac: '下載 Mac 版', dlWin: '下載 Windows 版', dlDeb: '下載 .deb',
@@ -594,6 +598,11 @@ function render() {
     const a = $(id);
     if (url) { a.textContent = name + ' →'; a.href = url; a.removeAttribute('aria-disabled'); }
     else { a.textContent = `${name} · ${t.soon}`; a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); }
+  }
+  // Until the App Store listing is live, the iPhone link goes to the public beta instead.
+  if (!CONFIG.appStore && CONFIG.testflight) {
+    const a = $('#store-ios');
+    a.textContent = t.tfBeta; a.href = CONFIG.testflight; a.removeAttribute('aria-disabled');
   }
   // A panel's note shows only while its main download isn't out yet.
   $$('.soon').forEach(el => { el.hidden = ready(el.parentElement.querySelector('.btn[data-file]').dataset.file); });
